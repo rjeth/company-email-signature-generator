@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-5">Email Signature Generator</h1>
+        <div class="mb-3">
+            <label for="full_name" class="required form-label">Full Name</label>
+            <input type="text" class="form-control" id="full_name" placeholder="Full name">
+        </div>
+        <div class="mb-3">
+            <label for="position" class="required form-label">Position</label>
+            <input type="text" class="form-control" id="position" placeholder="Position">
+        </div>
+        <div class="mb-3">
+            <label for="position_2" class="form-label">Second Position</label>
+            <input type="text" class="form-control" id="position_2" placeholder="Position 2">
+        </div>
+        <div class="mb-3">
+            <label for="contact" class="form-label">Contact Number</label>
+            <input type="tel" class="form-control" id="contact" placeholder="Contact">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Email">
+        </div>
+        <div class="mb-5">
+            <label for="website" class="form-label">Website</label>
+            <input type="email" class="form-control" id="website" placeholder="website" value="www.beoptimal.com">
+        </div>
+        <div>
+            <button class="btn btn-lg btn-primary" id="generate_btn">Generate Email Signature</button>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="container mt-5">
+
+        <div id="email_signature_template">
+            <!--[if gte mso 15]>
+                                    <xml>
+                                    <o:OfficeDocumentSettings>
+                                    <o:AllowPNG/>
+                                    <o:PixelsPerInch>96</o:PixelsPerInch>
+                                    </o:OfficeDocumentSettings>
+                                    </xml>
+                                    <![endif]-->
+            <!--[if gte mso 9]>
+              		<xml>
+              			<o:OfficeDocumentSettings>
+              				<o:AllowPNG/>
+              				<o:PixelsPerInch>96</o:PixelsPerInch>
+              			</o:OfficeDocumentSettings>
+              		</xml>
+              	<![endif]-->
+            <!--[if mso]>
+              			<style> body,table tr,table td,a, span,table.MsoNormalTable {font-family:Arial, Helvetica, sans-serif !important;  }</style>
+              	<![endif]-->
+
+            <table border="0" cellpadding="40" cellspacing="0" id="emai_table"
+                style="width: 700px; vertical-align: -webkit-baseline-middle; font-size: large; font-family: Arial; border: 0px; border-width: 0px; border-style: none; background-color: rgb(16, 18, 25);"
+                width="700">
+                <tbody>
+                    <tr>
+                        <td style="border: 0px; border-width: 0px; border-style: none; ">
+                            <table border="0" cellpadding="0" cellspacing="0"
+                                style="vertical-align: -webkit-baseline-middle; font-size: large; font-family: Arial; border: 0px; border-width: 0px; border-style: none;">
+                                <tbody>
+                                    <tr>
+                                        <td style="border: 0px; border-width: 0px; border-style: none; height: 40px;"
+                                            height="40">
+                                            <div style="height:40;"></div>
+                                        </td>
+                                        <td
+                                            style="vertical-align: middle; margin: 0; padding: 0; padding-right: 40px; border: 0px; border-width: 0px; border-style: none; ">
+                                            <div id="badge_img">
+                                                <img style=" text-align: left !important; height: auto; margin-left: 24px !important"
+                                                    src="beoptml-logo.png" width="200px" height="auto" sizes="10" />
+                                            </div>
+                                        </td>
+                                        <td id="border_divider"
+                                            style="border: 0; border-left: 3px solid rgb(255, 255, 255); padding-right: 40px; padding-top: 40px; padding-bottom: 40px;">
+                                        </td>
+                                        <td id="badge_wrap" color="#fd9a24" direction="vertical"
+                                            style="border-width: 2px; border-style: none; text-align: left; vertical-align: top; padding-top: 10px; padding-bottom: 10px;">
+
+                                            <h2 color="#000000"
+                                                style="margin: 0px; font-size: 30px !important; line-height: 1.3; color: rgb(255, 255, 255); font-weight: 500; font-family: Bebas Neue, sans-serif; "
+                                                id="preview_full_name">
+                                                MICAH SHANSER
+                                            </h2>
+                                            <h2 color="#000000"
+                                                style="margin: 0px; margin-bottom: 10px; font-size: 30px !important; line-height: 1.3; color: rgb(255, 255, 255); font-weight: 500; font-family: Bebas Neue, sans-serif; "
+                                                id="preview_position">
+                                                MA | FOUNDER
+                                            </h2>
+                                            <p color="#000000" font-size="large"
+                                                style="margin: 0px; margin-bottom: 5px; color: rgb(255, 255, 255); font-size: 14px !important; line-height: 1.3; font-weight: 400; font-family: figtree, sans-serif; "
+                                                id="preview_job_title">
+                                                <span id="preview_contact">895-207-0650 x449</span> | <span
+                                                    id="preview_email">examplemail@optml.com</span>
+                                            </p>
+                                            <p color="#000000" font-size="large"
+                                                style="margin: 0px; margin-bottom: 30px; color: rgb(255, 255, 255); font-size: 14px !important; line-height: 1.3; font-weight: 400; font-family: figtree, sans-serif; "
+                                                id="preview_job_title">
+                                                website - <span id="preview_website">www.beoptml.com</span>
+                                            </p>
+
+                                            <table border="0" cellpadding="0" cellspacing="0"
+                                                style="display: inline-block; vertical-align: -webkit-baseline-middle; font-size: large; font-family: Poppins, Century Gothic, sans-serif">
+                                                <tbody>
+                                                    <tr style="text-align: left">
+                                                        <td
+                                                            style="border: 0px; border-width: 0px; border-style: none; ">
+                                                            <a href="" color="#ff6224"
+                                                                style="display: inline-block; padding: 0px;  font-size: 10px !important">
+                                                                <table border="0" cellpadding="0" cellspacing="0"
+                                                                    style="border: 0px; border-width: 0px; border-style: none;">
+                                                                    <tr>
+                                                                        <td
+                                                                            style="border: 0px; border-width: 0px; border-style: none; ">
+                                                                            <img src="facebook.png" alt="facebook"
+                                                                                color="#ff6224" height="30"
+                                                                                style="margin-right: 5px; display: block" />
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </a>
+                                                        </td>
+                                                        <td style="border: 0px; border-width: 0px; border-style: none; "
+                                                            width="10">
+                                                            <div></div>
+                                                        </td>
+                                                        <td
+                                                            style="border: 0px; border-width: 0px; border-style: none; ">
+                                                            <a href="" color="#ff6224"
+                                                                style="display: inline-block; padding: 0px;  font-size: 10px !important">
+                                                                <table border="0" cellpadding="0" cellspacing="0"
+                                                                    style="border: 0px; border-width: 0px; border-style: none;">
+                                                                    <tr>
+                                                                        <td
+                                                                            style="border: 0px; border-width: 0px; border-style: none; ">
+                                                                            <img src="instagram.png" alt="instagram"
+                                                                                color="#ff6224" height="30"
+                                                                                style="margin-right: 5px; display: block" />
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </a>
+                                                        </td>
+                                                        <td style="border: 0px; border-width: 0px; border-style: none; "
+                                                            width="10">
+                                                            <div></div>
+                                                        </td>
+                                                        <td
+                                                            style="border: 0px; border-width: 0px; border-style: none; ">
+                                                            <a href="" color="#ff6224"
+                                                                style="display: inline-block; padding: 0px;  font-size: 10px !important">
+                                                                <table border="0" cellpadding="0" cellspacing="0"
+                                                                    style="border: 0px; border-width: 0px; border-style: none;">
+                                                                    <tr>
+                                                                        <td
+                                                                            style="border: 0px; border-width: 0px; border-style: none; ">
+                                                                            <img src="twitter.png" alt="twitter"
+                                                                                color="#ff6224" height="30"
+                                                                                style="margin-right: 5px; display: block" />
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </a>
+                                                        </td>
+                                                        <td style="border: 0px; border-width: 0px; border-style: none; "
+                                                            width="10">
+                                                            <div style="height:40;"></div>
+                                                        </td>
+                                                        <td
+                                                            style="border: 0px; border-width: 0px; border-style: none; ">
+                                                            <a href="" color="#ff6224"
+                                                                style="display: inline-block; padding: 0px;  font-size: 10px !important">
+                                                                <table border="0" cellpadding="0" cellspacing="0"
+                                                                    style="border: 0px; border-width: 0px; border-style: none;">
+                                                                    <tr>
+                                                                        <td
+                                                                            style="border: 0px; border-width: 0px; border-style: none; ">
+                                                                            <img src="linkedin.png" alt="linkedin"
+                                                                                color="#ff6224" height="30"
+                                                                                style="margin-right: 5px; display: block" />
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                        <td style="border: 0px; border-width: 0px; border-style: none; height: 40px;"
+                                            height="40">
+                                            <div></div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mt-5 mb-5">
+            <button class="btn btn-lg btn-primary" id="copy_btn"
+                onclick="CopyToClipboard('email_signature_template')">Copy
+                Signature</button>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+    <script>
+        function generate_info() {
+            var fn = document.getElementById("full_name").value;
+            document.getElementById("preview_full_name").innerHTML = fn;
+            var pos = document.getElementById("position").value;
+            var pos2 = document.getElementById("position_2").value;
+            if (pos2 !== null && pos2 !== "") {
+                document.getElementById("preview_position").innerHTML = pos + "|" + pos2;
+            } else {
+                document.getElementById("preview_position").innerHTML = pos;
+            }
+
+
+            var cn = document.getElementById("contact").value;
+            document.getElementById("preview_contact").innerHTML = cn;
+            var em = document.getElementById("email").value;
+            document.getElementById("preview_email").innerHTML = em;
+            var wb = document.getElementById("website").value;
+            document.getElementById("preview_website").innerHTML = wb;
+        }
+
+        var button = document.getElementById("generate_btn");
+        button.addEventListener("click", generate_info);
+
+
+        function CopyToClipboard(element) {
+            var doc = document,
+                text = doc.getElementById(element),
+                range,
+                selection;
+
+            if (doc.body.createTextRange) {
+                range = doc.body.createTextRange();
+                range.moveToElementText(text);
+                range.select();
+            } else if (window.getSelection) {
+                selection = window.getSelection();
+                range = doc.createRange();
+                range.selectNodeContents(text);
+                selection.removeAllRanges();
+                selection.addRange(range);
+            }
+            document.execCommand("copy");
+            window.getSelection().removeAllRanges();
+            button = document.getElementById("copy_btn");
+            const currentLabel = "Copy Signature";
+            // Exit label update when already in progress
+            if (button.innerHTML === "Copied!") {
+                return;
+            }
+
+            // Update button label
+            button.innerHTML = "Copied!";
+            // Revert button label after 3 seconds
+            setTimeout(function () {
+                button.innerHTML = currentLabel;
+            }, 3000);
+        }
+
+    </script>
+</body>
+
+</html>
